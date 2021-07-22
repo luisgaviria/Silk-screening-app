@@ -5,6 +5,7 @@ import * as actions from "../actions";
 
 import Header from "./Header";
 import Landing from "./Landing";
+import Quote from "./Quote";
 import Dashboard from "./Dashboard";
 
 import "./app.css";
@@ -21,6 +22,7 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path='/' component={Landing} />
+            <Route exact path='/quote' component={Quote} />
             <Route exact path='/surveys' component={Dashboard} />
           </div>
         </BrowserRouter>
