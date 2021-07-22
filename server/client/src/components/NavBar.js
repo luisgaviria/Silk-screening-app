@@ -59,7 +59,7 @@ const NavBar = (props) => {
             </Nav.Link>
 
             <Nav.Link className='navbar-brand-text'>
-              <Link className='navbar-brand-text' to='/favorites'>
+              <Link className='navbar-brand-text' to='/quote'>
                 Request A Quote
               </Link>
             </Nav.Link>
