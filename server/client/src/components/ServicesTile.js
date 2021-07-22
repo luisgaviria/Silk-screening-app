@@ -7,7 +7,7 @@ const ServicesTile = () => {
       <div className='card'>
         <div className='img-wrapper'>
           <img
-            src='https://lh3.googleusercontent.com/proxy/WJlc97ePcodtATxOg8ew9O0-hJLL7NOWLtrxbbGQXoaib3U0LC_eR_kbkLm9I8NikSwPlTvUAJT4i991MFXnXgzIsUcZiXdAmqdKDoINmh7M'
+            src='https://i.postimg.cc/vHRC2tZf/imageedit-1-8001840362.jpgM'
             alt='image of shirt'
           />
         </div>
@@ -35,7 +35,7 @@ const ServicesTile = () => {
       <div className='card'>
         <div className='img-wrapper'>
           <img
-            src='https://lh3.googleusercontent.com/proxy/WJlc97ePcodtATxOg8ew9O0-hJLL7NOWLtrxbbGQXoaib3U0LC_eR_kbkLm9I8NikSwPlTvUAJT4i991MFXnXgzIsUcZiXdAmqdKDoINmh7M'
+            src='https://i.postimg.cc/vHRC2tZf/imageedit-1-8001840362.jpg'
             alt='image of shirt'
           />
         </div>
@@ -63,7 +63,7 @@ const ServicesTile = () => {
       <div className='card'>
         <div className='img-wrapper'>
           <img
-            src='https://lh3.googleusercontent.com/proxy/WJlc97ePcodtATxOg8ew9O0-hJLL7NOWLtrxbbGQXoaib3U0LC_eR_kbkLm9I8NikSwPlTvUAJT4i991MFXnXgzIsUcZiXdAmqdKDoINmh7M'
+            src='https://i.postimg.cc/vHRC2tZf/imageedit-1-8001840362.jpg'
             alt='image of shirt'
           />
         </div>
