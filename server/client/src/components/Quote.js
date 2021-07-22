@@ -57,17 +57,21 @@ const Quote = () => {
 
   return (
     <>
-      <div className='not-container'></div>
+      <div className='not-container' style={{ marginBottom: "-6rem" }}></div>
+      <h1 style={{ margin: "auto", maxWidth: "600px", marginBottom: "1rem" }}>
+        Request a Quote
+      </h1>
       <Form
         style={{
           maxWidth: "600px",
           margin: "auto",
           marginBottom: "50px",
-          marginTop: "-6rem",
+          marginTop: "-1rem",
         }}
       >
         <Form.Group>
           <Form.Control
+            style={{ marginBottom: "4pt" }}
             type='text'
             placeholder='title'
             name='title'
@@ -77,6 +81,7 @@ const Quote = () => {
         </Form.Group>
         <Form.Group>
           <Form.Control
+            style={{ marginBottom: "4pt" }}
             type='text'
             placeholder='message'
             name='message'
@@ -86,6 +91,7 @@ const Quote = () => {
         </Form.Group>
         <Form.Group>
           <Form.Control
+            style={{ marginBottom: "4pt" }}
             type='email'
             placeholder='email'
             name='email'
@@ -95,6 +101,7 @@ const Quote = () => {
         </Form.Group>
         <Form.Group>
           <Form.Control
+            style={{ marginBottom: "4pt" }}
             type='tel'
             placeholder='phone_number'
             name='phone_number'
