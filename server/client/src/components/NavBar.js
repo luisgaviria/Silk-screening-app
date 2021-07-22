@@ -65,12 +65,12 @@ const NavBar = (props) => {
             </Nav.Link>
             <Nav.Link className='navbar-brand-text'>
               <Link className='navbar-brand-text' to='/about'>
-                About Us
+                Catalog
               </Link>
             </Nav.Link>
             <Nav.Link className='navbar-brand-text'>
               <Link className='navbar-brand-text' to='/about'>
-                Catalog
+                About Us
               </Link>
             </Nav.Link>
             {renderContent()}

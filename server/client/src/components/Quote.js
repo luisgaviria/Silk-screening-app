@@ -57,7 +57,15 @@ const Quote = () => {
 
   return (
     <>
-      <Form style={{ width: "600px", margin: "auto", marginTop: "50px " }}>
+      <div className='not-container'></div>
+      <Form
+        style={{
+          maxWidth: "600px",
+          margin: "auto",
+          marginBottom: "50px",
+          marginTop: "-6rem",
+        }}
+      >
         <Form.Group>
           <Form.Control
             type='text'
