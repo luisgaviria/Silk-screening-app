@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Payments from "./Payments";
+import ServicesTile from "./ServicesTile";
+import "./app.css";
 
 const Landing = () => {
   const hideForm = () => {
@@ -14,9 +16,10 @@ const Landing = () => {
   });
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>APP-SILK-SCREENING!</h1>
-      Collect feedback from your users
-      <button
+      <div className='not-container'></div>
+
+      <ServicesTile />
+      {/* <button
         onClick={() => {
           setState({ showPayments: !state.showPayments });
         }}
@@ -26,8 +29,8 @@ const Landing = () => {
       </button>
       {state.showPayments ? <Payments hideForm={hideForm} /> : null}
       {state.status ? (
-        <h1 style={{ color: "green" }}>Succesfully added credits!</h1>
-      ) : null}
+        <h1 style={{ color: "green" }}>Successfully added credits!</h1>
+      ) : null} */}
     </div>
   );
 };

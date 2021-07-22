@@ -7,6 +7,8 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Dashboard from "./Dashboard";
 
+import "./app.css";
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
