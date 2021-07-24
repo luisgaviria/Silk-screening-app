@@ -8,10 +8,10 @@ module.exports = (app) => {
     const file = req.files.image;
     const file_buffer = file.data.toString("base64");
     const msg = {
-      to: body.email,
+      to: "luis.aptx@gmail.com",
       from: "luis.aptx@gmail.com",
       subject: body.title,
-      text: body.message,
+      text: `Message: ${body.message} \n\n Name: ${body.name} \n Email: ${body.email} \n Phone Number: ${body.phone_number}`,
       attachments: [
         {
           content: file_buffer,
@@ -26,7 +26,7 @@ module.exports = (app) => {
       .send(msg)
       .then(() => {
         res.status(200).json({
-          message: "Succesfully send email",
+          message: "Succesfully sent email",
         });
       })
       .catch((err) => {

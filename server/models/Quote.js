@@ -5,4 +5,4 @@ const Quote = new mongoose.Schema({
   phone_number: mongoose.SchemaTypes.String,
 });
 
-module.exports = mongoose.model("quote", Quote);
+module.exports = mongoose.model("quotes", Quote);

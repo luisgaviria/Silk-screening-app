@@ -17,13 +17,19 @@ const ServicesTile = () => {
         <div className='right'>
           <h2>Silk Screening</h2>
           <ul>
-            <li>Width 7.7"</li>
-            <li>Length 31.75"</li>
-            <li>Wheelbase 14"</li>
-            <li>Nose 6.875"</li>
-            <li>Tail 6.25"</li>
+            <li>T-Shirts</li>
+            <li>Uniforms</li>
+            <li>Jackets</li>
+            <li>Bags</li>
+            <li>Pants</li>
+            <li>and more!</li>
           </ul>
-          <button className='request-a-quote'>Request a Quote</button>
+          <button className='request-a-quote'>
+            <a style={{ color: "black" }} href='/quote'>
+              {" "}
+              Request a Quote
+            </a>
+          </button>
         </div>
       </div>
       {/* <div className='img-wrapper'>
@@ -45,13 +51,18 @@ const ServicesTile = () => {
         <div className='right'>
           <h2>Embroidery</h2>
           <ul>
-            <li>Width 7.7"</li>
-            <li>Length 31.75"</li>
-            <li>Wheelbase 14"</li>
-            <li>Nose 6.875"</li>
-            <li>Tail 6.25"</li>
+            <li>Jackets</li>
+            <li>Polos</li>
+            <li>Team Uniforms</li>
+            <li>Aprons</li>
+            <li>Hats</li>
+            <li>and more!</li>
           </ul>
-          <button className='request-a-quote'>Request a Quote</button>
+          <button className='request-a-quote'>
+            <a style={{ color: "black" }} href='/quote'>
+              Request a Quote
+            </a>
+          </button>
         </div>
       </div>
       {/* <div className='img-wrapper'>
@@ -68,10 +79,10 @@ const ServicesTile = () => {
           />
         </div>
         <div className='front'>
-          <h1>Vynil</h1>
+          <h1>Vinyl</h1>
         </div>
         <div className='right'>
-          <h2>Vynil</h2>
+          <h2>Vinyl</h2>
           <ul>
             <li>Width 7.7"</li>
             <li>Length 31.75"</li>
@@ -79,7 +90,11 @@ const ServicesTile = () => {
             <li>Nose 6.875"</li>
             <li>Tail 6.25"</li>
           </ul>
-          <button className='request-a-quote'>Request a Quote</button>
+          <button className='request-a-quote'>
+            <a style={{ color: "black" }} href='/quote'>
+              Request a Quote
+            </a>
+          </button>
         </div>
       </div>
       {/* <div className='img-wrapper'>

@@ -4,8 +4,9 @@ import axios from "axios";
 
 const Quote = () => {
   const [state, setState] = useState({
-    title: "",
-    message: "",
+    company_name: "",
+    order_description: "",
+    name: "",
     email: "",
     phone_number: "",
     image: null,
@@ -33,8 +34,9 @@ const Quote = () => {
     form_data.append("image", state.image);
     form_data.append("phone_number", state.phone_number);
     form_data.append("email", state.email);
-    form_data.append("message", state.message);
-    form_data.append("title", state.title);
+    form_data.append("message", state.order_description);
+    form_data.append("title", state.company_name);
+    form_data.append("name", state.name);
     try {
       await axios.post("/api/quote/send", form_data, {
         headers: {
@@ -42,8 +44,9 @@ const Quote = () => {
         },
       });
       setState({
-        title: "",
-        message: "",
+        company_name: "",
+        order_description: "",
+        name: "",
         email: "",
         phone_number: "",
         image: null,
@@ -58,7 +61,7 @@ const Quote = () => {
   return (
     <>
       <div className='not-container' style={{ marginBottom: "-6rem" }}></div>
-      <h1 style={{ margin: "auto", maxWidth: "600px", marginBottom: "1rem" }}>
+      <h1 style={{ margin: "auto", maxWidth: "600px", marginBottom: "2rem" }}>
         Request a Quote
       </h1>
       <Form
@@ -71,29 +74,40 @@ const Quote = () => {
       >
         <Form.Group>
           <Form.Control
-            style={{ marginBottom: "4pt" }}
+            style={{ marginBottom: "2rem" }}
             type='text'
-            placeholder='title'
-            name='title'
+            placeholder='Company Name'
+            name='company_name'
             onChange={handleInputChange}
-            value={state.title}
+            value={state.company_name}
           />
         </Form.Group>
         <Form.Group>
           <Form.Control
-            style={{ marginBottom: "4pt" }}
+            style={{ marginBottom: "2rem" }}
             type='text'
-            placeholder='message'
-            name='message'
+            placeholder='Contact'
+            name='name'
             onChange={handleInputChange}
-            value={state.message}
+            value={state.name}
           />
         </Form.Group>
         <Form.Group>
           <Form.Control
-            style={{ marginBottom: "4pt" }}
+            as='textarea'
+            style={{ height: "100px", marginBottom: "2rem" }}
+            type='text'
+            placeholder='Order Description'
+            name='order_description'
+            onChange={handleInputChange}
+            value={state.order_description}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Control
+            style={{ marginBottom: "2rem" }}
             type='email'
-            placeholder='email'
+            placeholder='Email'
             name='email'
             onChange={handleInputChange}
             value={state.email}
@@ -101,9 +115,9 @@ const Quote = () => {
         </Form.Group>
         <Form.Group>
           <Form.Control
-            style={{ marginBottom: "4pt" }}
+            style={{ marginBottom: "2rem" }}
             type='tel'
-            placeholder='phone_number'
+            placeholder='Phone Number'
             name='phone_number'
             value={state.phone_number}
             onChange={handleInputChange}
@@ -111,6 +125,7 @@ const Quote = () => {
         </Form.Group>
         <Form.Group>
           <Form.Control
+            style={{ marginBottom: "2rem" }}
             id='file_stuff'
             type='file'
             placeholder='image'

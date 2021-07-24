@@ -1,5 +1,6 @@
 .wrapper {
   margin-top: -0.2rem;
+  margin-bottom: 10rem;
   gap: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +59,8 @@
 }
 
 h2 {
-  margin: 0;
+  margin-left: 2rem;
+  text-align: left;
   font-size: 38px;
   letter-spacing: -0.25px;
   transform: translateX(-44px);
@@ -89,6 +91,7 @@ img {
   transition-delay: 100ms;
   transform: translateX(21%) rotateZ(10deg) skewX(3deg);
   pointer-events: none;
+  height: 30vh;
 }
 
 .img-wrapper {
@@ -122,12 +125,13 @@ ul {
 }
 
 li {
+  font-weight: 600;
   padding-bottom: 8px;
   position: relative;
 }
 
 li:before {
-  content: "x";
+  content: "*";
   position: absolute;
   left: -21px;
   opacity: 0.55;
