@@ -3,28 +3,35 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 
 const NavBar = (props) => {
   const renderContent = () => {
-    // console.log(props.auth);
-    // switch (props.auth) {
-    //   case null:
-    //     return;
-    //   case false:
-    //     return (
-    //       <a className='log-in-button' href='/auth/google'>
-    //         Login With Google
-    //       </a>
-    //     );
-    //   default:
-    //     return (
-    //       // <li key='3' style={{ margin: "0 10px" }}>
-    //       //   Credits: {this.props.auth.credits}
-    //       // </li>,
-    //       <a href='/api/logout'>Logout</a>
-    //     );
-    // }
+    console.log(props.auth);
+    switch (props.auth) {
+      case null:
+        return;
+      case false:
+        return (
+          <a href='/auth/google' style={{ marginLeft: "26rem" }}>
+            <img src='https://i.postimg.cc/QNYWWTqH/btn-google-signin-dark-normal-web.png'></img>
+          </a>
+
+          // <button
+          //   className='align-items-end'
+          //   style={{ marginLeft: "26rem", marginTop: "-0.8rem" }}
+          // >
+          //   <a href='/auth/google'>Login With Google</a>
+          // </button>
+        );
+      default:
+        return (
+          // <li key='3' style={{ margin: "0 10px" }}>
+          //   Credits: {this.props.auth.credits}
+          // </li>,
+          <a href='/api/logout'>Logout</a>
+        );
+    }
   };
 
   return (
@@ -37,7 +44,7 @@ const NavBar = (props) => {
         variant='light'
       >
         <Navbar.Brand>
-          <a href='http://www.urabatv.com' className='navbar-brand'>
+          <a href='/' className='navbar-brand'>
             <img
               className='d-inline-block'
               src='https://i.postimg.cc/DygJdcXm/APPS.png'
@@ -52,23 +59,35 @@ const NavBar = (props) => {
             Home
           </Link>
         </Nav.Link>  */}
-            <Nav.Link className='navbar-brand-text'>
+            <Nav.Link
+              style={{ marginLeft: "2rem", marginTop: "-0.8rem" }}
+              className='navbar-brand-text'
+            >
               <Link className='navbar-brand-text' to='/'>
                 Home
               </Link>
             </Nav.Link>
 
-            <Nav.Link className='navbar-brand-text'>
+            <Nav.Link
+              className='navbar-brand-text'
+              style={{ marginTop: "-0.8rem" }}
+            >
               <Link className='navbar-brand-text' to='/quote'>
                 Request A Quote
               </Link>
             </Nav.Link>
-            <Nav.Link className='navbar-brand-text'>
+            <Nav.Link
+              className='navbar-brand-text'
+              style={{ marginTop: "-0.8rem" }}
+            >
               <Link className='navbar-brand-text' to='/about'>
                 Catalog
               </Link>
             </Nav.Link>
-            <Nav.Link className='navbar-brand-text'>
+            <Nav.Link
+              className='navbar-brand-text'
+              style={{ marginTop: "-0.8rem" }}
+            >
               <Link className='navbar-brand-text' to='/about'>
                 About Us
               </Link>
