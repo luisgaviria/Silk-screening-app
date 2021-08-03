@@ -60,7 +60,7 @@ const NavBar = (props) => {
           </Link>
         </Nav.Link>  */}
             <Nav.Link
-              style={{ marginLeft: "2rem", marginTop: "-0.8rem" }}
+              style={{ marginTop: "-0.8rem" }}
               className='navbar-brand-text'
             >
               <Link className='navbar-brand-text' to='/'>
@@ -80,7 +80,7 @@ const NavBar = (props) => {
               className='navbar-brand-text'
               style={{ marginTop: "-0.8rem" }}
             >
-              <Link className='navbar-brand-text' to='/about'>
+              <Link className='navbar-brand-text' to='/catalog'>
                 Catalog
               </Link>
             </Nav.Link>
@@ -92,7 +92,7 @@ const NavBar = (props) => {
                 About Us
               </Link>
             </Nav.Link>
-            {renderContent()}
+            {/* {renderContent()} */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

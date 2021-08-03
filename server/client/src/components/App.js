@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 
 import Header from "./Header";
+import Footer from "./Footer";
 import Landing from "./Landing";
 import Quote from "./Quote";
 import Dashboard from "./Dashboard";
+import Catalog from "../containers/Catalog";
 
 import "./app.css";
 
@@ -21,9 +23,12 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
+
             <Route exact path='/' component={Landing} />
             <Route exact path='/quote' component={Quote} />
+            <Route exact path='/catalog' component={Catalog} />
             <Route exact path='/surveys' component={Dashboard} />
+            <Footer />
           </div>
         </BrowserRouter>
       </div>

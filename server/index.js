@@ -36,6 +36,7 @@ app.use(passport.session());
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 require("./routes/quoteRoutes")(app);
+require("./routes/catalogRoutes")(app);
 // require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
