@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Helmet from "helmet";
 import Payments from "./Payments";
 import ServicesTile from "./ServicesTile";
 import "./app.css";
@@ -31,6 +32,10 @@ const Landing = () => {
       {state.status ? (
         <h1 style={{ color: "green" }}>Successfully added credits!</h1>
       ) : null} */}
+
+      <Helmet>
+        <title>Silk Printing App</title>
+      </Helmet>
     </div>
   );
 };
