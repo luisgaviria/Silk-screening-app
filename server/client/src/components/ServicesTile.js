@@ -78,7 +78,6 @@ const ServicesTile = () => {
           <img
             className='shirt'
             src='https://i.postimg.cc/vHRC2tZf/imageedit-1-8001840362.jpg'
-            alt='image of shirt'
           />
         </div>
         <div className='front'>

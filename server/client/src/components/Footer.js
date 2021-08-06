@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class='footer'>
+    <footer className='footer'>
       <div className='footer-left col-md-4 col-sm-6'>
         <p className='about'>
           <span> About the company</span> Ut congue augue non tellus bibendum,
@@ -13,19 +13,19 @@ const Footer = () => {
           Nam ut nibh mollis, tristique ante sed, viverra massa.
         </p>
         <div className='icons'>
-          <a href='#'>
+          <a href='/'>
             <i className='fa fa-facebook'></i>
           </a>
-          <a href='#'>
+          <a href='/'>
             <i className='fa fa-twitter'></i>
           </a>
-          <a href='#'>
+          <a href='/'>
             <i className='fa fa-linkedin'></i>
           </a>
-          <a href='#'>
+          <a href='/'>
             <i className='fa fa-google-plus'></i>
           </a>
-          <a href='#'>
+          <a href='/'>
             <i className='fa fa-instagram'></i>
           </a>
         </div>
@@ -44,7 +44,7 @@ const Footer = () => {
         <div>
           <i className='fa fa-envelope'></i>
           <p>
-            <a href='#'> office@company.com</a>
+            <a href='/'> office@company.com</a>
           </p>
         </div>
       </div>
@@ -54,9 +54,9 @@ const Footer = () => {
           Company<span> logo</span>
         </h2>
         <p className='menu'>
-          <a href='#'> Home</a> |<a href='#'> About</a> |
-          <a href='#'> Services</a> |<a href='#'> Portfolio</a> |
-          <a href='#'> News</a> |<a href='#'> Contact</a>
+          <a href='/'> Home</a> |<a href='/'> About</a> |
+          <a href='/'> Services</a> |<a href='/'> Portfolio</a> |
+          <a href='/'> News</a> |<a href='/'> Contact</a>
         </p>
         <p className='name'> Company Name &copy; 2016</p>
       </div>

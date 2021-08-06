@@ -3,7 +3,7 @@ import { ListGroup } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-import Card from "react-bootstrap/Card";
+// import Card from "react-bootstrap/Card";
 
 const Catalog = (props) => {
   const history = useHistory();
@@ -72,9 +72,13 @@ const Catalog = (props) => {
               <div
                 onClick={() => clickOnProduct(item._id)}
                 className='not-item-container'
-                style={{ cursor: "pointer" }}
+                // style={{ cursor: "pointer" }}
               >
-                <img className='product-image' src={item.images[1]} />
+                <img
+                  className='product-image'
+                  src={item.images[1]}
+                  alt='product-image'
+                />
                 <h6 className='product-title'>{item.title}</h6>
                 {/* <h6>{item.sizes}</h6> */}
               </div>

@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Helmet from "helmet";
-import Payments from "./Payments";
+// import Payments from "./Payments";
 import ServicesTile from "./ServicesTile";
 import "./app.css";
 
 const Landing = () => {
-  const hideForm = () => {
-    setState({
-      showPayments: false,
-      status: true,
-    });
-  };
-  const [state, setState] = useState({
-    showPayments: false,
-    status: false,
-  });
+  // const hideForm = () => {
+  //   setState({
+  //     showPayments: false,
+  //     status: true,
+  //   });
+  // };
+  // const [state, setState] = useState({
+  //   showPayments: false,
+  //   status: false,
+  // });
   return (
     <div style={{ textAlign: "center" }}>
       <div className='not-container'></div>
