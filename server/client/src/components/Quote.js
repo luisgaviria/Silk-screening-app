@@ -142,6 +142,9 @@ const Quote = () => {
           />
         </Form.Group>
         <Form.Group>
+          <p style={{ marginBottom: "5px", fontWeight: "400" }}>
+            Add image below{" "}
+          </p>
           <Form.Control
             style={{ marginBottom: "2rem" }}
             id='file_stuff'
