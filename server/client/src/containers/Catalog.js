@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
+import Card from "react-bootstrap/Card";
+
 const Catalog = (props) => {
+  const history = useHistory();
   const [state, setState] = useState({
     categories: [],
     category: "",
     items: [],
     page: 1,
-    limit: 255,
+    limit: 50,
   });
+
+  const clickOnProduct = (itemId) => {
+    history.push(`/catalog/details/${itemId}`);
+  };
+
   useEffect(async () => {
     const { data } = await axios.get("/api/catalog/categories", {
       headers: {
@@ -31,7 +40,7 @@ const Catalog = (props) => {
     console.log(data);
     setState({
       ...state,
-      items: data.items,
+      items: data.products,
       page: data.page,
       limit: data.limit,
     });
@@ -60,13 +69,14 @@ const Catalog = (props) => {
         <div className='item-container'>
           {state.items.map((item, index) => {
             return (
-              <div className='not-item-container'>
-                <img
-                  className='product-image'
-                  src={item.FRONT_MODEL_IMAGE_URL}
-                />
-                <h6>{item.PRODUCT_TITLE}</h6>
-                <h6>{item.AVAILABLE_SIZES}</h6>
+              <div
+                onClick={() => clickOnProduct(item._id)}
+                className='not-item-container'
+                style={{ cursor: "pointer" }}
+              >
+                <img className='product-image' src={item.images[1]} />
+                <h6 className='product-title'>{item.title}</h6>
+                {/* <h6>{item.sizes}</h6> */}
               </div>
             );
           })}

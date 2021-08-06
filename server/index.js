@@ -6,6 +6,8 @@ const passport = require("passport");
 const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 const fileUpload = require("express-fileupload");
+const cron = require("node-cron");
+const { addProductsToDb } = require("./utils/addProducts");
 require("./models/User");
 // require("./models/Survey");
 require("./services/passport");
@@ -14,6 +16,10 @@ mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
+});
+
+cron.schedule("0 */1 * * *", async () => {
+  await addProductsToDb();
 });
 
 const app = express();
@@ -39,7 +45,6 @@ require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 require("./routes/quoteRoutes")(app);
 require("./routes/catalogRoutes")(app);
-// require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
