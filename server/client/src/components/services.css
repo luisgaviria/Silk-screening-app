@@ -208,6 +208,7 @@ button:hover {
   font-size: 16px;
   padding: 50px;
   margin-top: 50px;
+  position: absolute;
 }
 
 .footer .footer-left,

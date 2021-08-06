@@ -9,6 +9,8 @@ const Quote = () => {
     name: "",
     email: "",
     phone_number: "",
+    product_id: "",
+    contact: "",
     image: null,
     sent: false,
   });
@@ -37,6 +39,9 @@ const Quote = () => {
     form_data.append("message", state.order_description);
     form_data.append("title", state.company_name);
     form_data.append("name", state.name);
+    form_data.append("product_id", state.product_id);
+    form_data.append("product_id", state.contact);
+
     try {
       await axios.post("/api/quote/send", form_data, {
         headers: {
@@ -49,6 +54,7 @@ const Quote = () => {
         name: "",
         email: "",
         phone_number: "",
+        product_id: "",
         image: null,
         sent: true,
       });
@@ -87,9 +93,9 @@ const Quote = () => {
             style={{ marginBottom: "2rem" }}
             type='text'
             placeholder='Contact'
-            name='name'
+            name='contact'
             onChange={handleInputChange}
-            value={state.name}
+            value={state.contact}
           />
         </Form.Group>
         <Form.Group>
@@ -103,6 +109,18 @@ const Quote = () => {
             value={state.order_description}
           />
         </Form.Group>
+
+        <Form.Group>
+          <Form.Control
+            style={{ marginBottom: "2rem" }}
+            type='text'
+            placeholder='Product ID'
+            name='product_id'
+            onChange={handleInputChange}
+            value={state.product_id}
+          />
+        </Form.Group>
+
         <Form.Group>
           <Form.Control
             style={{ marginBottom: "2rem" }}

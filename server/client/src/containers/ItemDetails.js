@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import Button from "react-bootstrap/Button";
+
 const ItemDetails = (props) => {
   const [state, setState] = useState({
     product: { colors: [], images: [""] },
@@ -20,6 +22,11 @@ const ItemDetails = (props) => {
       <h1 className='details-title'>{state.product.title}</h1>
       <img className='product-details-image' src={state.product.images[1]} />
       <h6 className='product-description'>{state.product.description}</h6>
+      <div className='d-grid gap-2'>
+        <Button variant='primary' size='lg' href='/quote'>
+          Request A Quote
+        </Button>
+      </div>
       {state.product.colors.map((color) => {
         // return (
         //   <img
