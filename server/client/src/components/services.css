@@ -45,7 +45,7 @@
   );
   opacity: 0.08;
   transform: rotateY(90deg) translateZ(160px);
-  border-radius: 0 0 3px 34px;
+  border-radius: 0 0 3px 4px;
 }
 
 .card:hover {

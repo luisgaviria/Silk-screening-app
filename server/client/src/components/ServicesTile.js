@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import "./services.css";
 
 const ServicesTile = () => {
@@ -23,7 +24,7 @@ const ServicesTile = () => {
             <li>Jackets</li>
             <li>Bags</li>
             <li>Pants</li>
-            <li>and more!</li>
+            <li>And More!</li>
           </ul>
           <button className='request-a-quote'>
             <a style={{ color: "black" }} href='/quote'>
@@ -32,6 +33,13 @@ const ServicesTile = () => {
             </a>
           </button>
         </div>
+        <Helmet>
+          <title>Silk Screening</title>
+          <meta
+            name='description'
+            content='T-Shirts, Uniforms, Jackets, Bags, Pants '
+          />
+        </Helmet>
       </div>
       {/* <div className='img-wrapper'>
         <img
@@ -58,7 +66,7 @@ const ServicesTile = () => {
             <li>Team Uniforms</li>
             <li>Aprons</li>
             <li>Hats</li>
-            <li>and more!</li>
+            <li>And More!</li>
           </ul>
           <button className='request-a-quote'>
             <a style={{ color: "black" }} href='/quote'>
@@ -66,6 +74,13 @@ const ServicesTile = () => {
             </a>
           </button>
         </div>
+        <Helmet>
+          <title>Embroidery</title>
+          <meta
+            name='description'
+            content='Jackets, Polos, Team Uniforms, Aprons, Hats, and more! '
+          />
+        </Helmet>
       </div>
       {/* <div className='img-wrapper'>
         <img
@@ -86,11 +101,12 @@ const ServicesTile = () => {
         <div className='right'>
           <h2>Vinyl</h2>
           <ul>
-            <li>Width 7.7"</li>
-            <li>Length 31.75"</li>
-            <li>Wheelbase 14"</li>
-            <li>Nose 6.875"</li>
-            <li>Tail 6.25"</li>
+            <li>Jerseys</li>
+            <li>Shirts</li>
+            <li>Pants</li>
+            <li>Signs</li>
+            <li>Safety Vests</li>
+            <li>And More!</li>
           </ul>
           <button className='request-a-quote'>
             <a style={{ color: "black" }} href='/quote'>
@@ -98,6 +114,13 @@ const ServicesTile = () => {
             </a>
           </button>
         </div>
+        <Helmet>
+          <title>Vinyl</title>
+          <meta
+            name='description'
+            content='Jerseys, Shirts, Pants, Signs, Safety Vests and more! '
+          />
+        </Helmet>
       </div>
       {/* <div className='img-wrapper'>
         <img

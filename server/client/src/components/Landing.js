@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet from "helmet";
+import { Helmet } from "react-helmet";
 // import Payments from "./Payments";
 import ServicesTile from "./ServicesTile";
 import "./app.css";
@@ -35,6 +35,7 @@ const Landing = () => {
 
       <Helmet>
         <title>Silk Printing App</title>
+        <meta name='description' content='Silk Printing App' />
       </Helmet>
     </div>
   );
