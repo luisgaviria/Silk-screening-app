@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
 
 import Button from "react-bootstrap/Button";
 
@@ -21,13 +23,14 @@ const ItemDetails = (props) => {
     setState({ product: response.data.product });
   }, []);
   return (
-    // fix naming convention on titles and other items
+    // fix css naming convention on titles and other items
     <div className='item-container'>
       <Helmet>
         <title>{state.product.title}</title>
         <meta name='description' content={state.product.description} />
         <link rel='canonical' href='http://localhost:3001.com/' />
       </Helmet>
+
       <div className='product-description'>
         <h1>{state.product.title}</h1>
       </div>
@@ -57,16 +60,28 @@ const ItemDetails = (props) => {
           // console.log(index);
           return (
             <>
-              <img
-                className='color-image'
-                src={image}
-                // width='100vw'
-                // height='100vh'
-                // style={{ marginRight: "2rem", marginTop: "1rem" }}
-              />
-              <p style={{ textAlign: "center" }}>
-                {state.product.colors[index - ++i]?.color}
-              </p>
+              <CardGroup>
+                <Card
+                  style={{ width: "18rem", marginTop: "1em", overflow: "auto" }}
+                >
+                  <Card.Img className='color-image' src={image} />
+                  <Card.Title>
+                    <h6
+                      className='color-name'
+                      style={{ textAlign: "center", fontWeight: "bolder" }}
+                    >
+                      {state.product.colors[index - ++i]?.color}
+                    </h6>
+                  </Card.Title>
+                  {/* <img
+                  className='color-image'
+                 
+                  // width='100vw'
+                  // height='100vh'
+                  // style={{ marginRight: "2rem", marginTop: "1rem" }}
+                /> */}
+                </Card>
+              </CardGroup>
             </>
           );
         }

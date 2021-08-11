@@ -5,7 +5,7 @@ import "./services.css";
 const ServicesTile = () => {
   return (
     <div className='wrapper'>
-      <div className='card'>
+      <div className='tile-card'>
         <div className='img-wrapper'>
           <img
             className='shirt'
@@ -47,7 +47,7 @@ const ServicesTile = () => {
           alt='image of shirt'
         />
       </div> */}
-      <div className='card'>
+      <div className='tile-card'>
         <div className='img-wrapper'>
           <img
             className='shirt'
@@ -88,7 +88,7 @@ const ServicesTile = () => {
           alt='image of shirt'
         />
       </div> */}
-      <div className='card'>
+      <div className='tile-card'>
         <div className='img-wrapper'>
           <img
             className='shirt'
