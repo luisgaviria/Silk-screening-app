@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import Button from "react-bootstrap/Button";
+
+let i = 0;
 
 const ItemDetails = (props) => {
   const [state, setState] = useState({
@@ -20,6 +23,11 @@ const ItemDetails = (props) => {
   return (
     // fix naming convention on titles and other items
     <div className='item-container'>
+      <Helmet>
+        <title>{state.product.title}</title>
+        <meta name='description' content={state.product.description} />
+        <link rel='canonical' href='http://localhost:3001.com/' />
+      </Helmet>
       <div className='product-description'>
         <h1>{state.product.title}</h1>
       </div>
@@ -44,16 +52,22 @@ const ItemDetails = (props) => {
         );
       })}
 
-      {state.product.images.map((image) => {
+      {state.product.images.map((image, index) => {
         if (image.search("https") != -1) {
+          // console.log(index);
           return (
-            <img
-              className='color-image'
-              src={image}
-              // width='100vw'
-              // height='100vh'
-              // style={{ marginRight: "2rem", marginTop: "1rem" }}
-            />
+            <>
+              <img
+                className='color-image'
+                src={image}
+                // width='100vw'
+                // height='100vh'
+                // style={{ marginRight: "2rem", marginTop: "1rem" }}
+              />
+              <p style={{ textAlign: "center" }}>
+                {state.product.colors[index - ++i]?.color}
+              </p>
+            </>
           );
         }
       })}

@@ -1,6 +1,7 @@
 // const neatCsv = require("neat-csv");
 // const fs = require("fs");
 const { addProductsToDb } = require("../utils/addProducts");
+const { addColors } = require("../utils/addColors");
 const Product = require("../models/Product");
 
 const paginate = (array, page_size, page_number) => {
@@ -89,6 +90,10 @@ module.exports = (app) => {
     // return res.status(200).json({
     //   categories: categories,
     // });
+  });
+
+  app.get("/api/addcolors/test", async (req, res, next) => {
+    await addColors();
   });
 
   app.get("/api/catalog/details/:itemId", async (req, res, next) => {
