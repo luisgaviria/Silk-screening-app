@@ -376,9 +376,11 @@ button:hover {
 }
 
 .categories-title {
-  font-size: 4rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  font-family: "Source Code Pro", monospace;
+  color: rgb(39, 38, 38);
+  font-size: 3rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
   margin-left: 1rem;
 }
 

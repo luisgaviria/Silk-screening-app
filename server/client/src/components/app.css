@@ -141,3 +141,22 @@
   transform: scale(2.5);
   margin-top: -2rem;
 }
+
+.about-us-title {
+  font-family: "Source Code Pro", monospace;
+  font-size: 4em;
+  color: rgb(70, 69, 69);
+  margin: 0 auto;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.about-us-text {
+  font-size: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: grey;
+  text-align: left;
+  margin-bottom: 10pt;
+  margin-top: 10pt;
+}

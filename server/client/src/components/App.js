@@ -10,6 +10,7 @@ import Quote from "./Quote";
 import Dashboard from "./Dashboard";
 import ItemDetails from "../containers/ItemDetails";
 import Catalog from "../containers/Catalog";
+import About from "../components/About";
 
 import "./app.css";
 
@@ -26,6 +27,7 @@ class App extends Component {
             <Header />
 
             <Route exact path='/' component={Landing} />
+            <Route exact path='/about' component={About} />
             <Route
               exact
               path='/catalog/details/:itemId'
