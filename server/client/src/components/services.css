@@ -86,7 +86,7 @@ p {
 }
 
 span {
-  margin-left: 13px;
+  /* margin-left: 13px; */
   opacity: 0.55;
 }
 
@@ -200,15 +200,20 @@ button:hover {
 }
 
 .footer {
-  background-color: #414141;
+  background-color: #2d709c;
   width: 100%;
   text-align: left;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 16px;
   padding: 50px;
-  margin-top: 50px;
-  position: absolute;
+  margin-top: 1rem;
+  /* position: absolute; */
+  position: relative;
+  /* margin-top: -180px; */
+  /* negative value of footer height */
+
+  clear: both;
 }
 
 .footer .footer-left,
@@ -299,8 +304,13 @@ button:hover {
 }
 
 .footer .footer-center p a {
-  color: #0099ff;
+  color: #000000;
   text-decoration: none;
+  font-size: 14pt;
+}
+
+.footer .footer-center p a:hover {
+  color: rgb(6, 57, 195);
 }
 
 /* footer right*/
@@ -338,7 +348,7 @@ button:hover {
 }
 
 .footer .name {
-  color: #0099ff;
+  color: #032c47;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -359,4 +369,23 @@ button:hover {
   .footer .footer-center i {
     margin-left: 0;
   }
+}
+
+.categories-container {
+  margin-bottom: 28rem;
+}
+
+.categories-title {
+  font-size: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.dropdown-button {
+  margin-left: 1rem;
+}
+
+.categories-list-item .active {
+  color: #33383b;
 }

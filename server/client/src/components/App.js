@@ -33,7 +33,6 @@ class App extends Component {
             />
             <Route exact path='/quote' component={Quote} />
             <Route exact path='/catalog' component={Catalog} />
-            <Route exact path='/surveys' component={Dashboard} />
             <Footer />
           </div>
         </BrowserRouter>

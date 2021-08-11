@@ -34,31 +34,38 @@ const Footer = () => {
         <div>
           <i className='fa fa-map-marker'></i>
           <p>
-            <span> Street name and number</span> City, Country
+            <span>150 E. Aurora St Suite D</span>
+            Waterbury, CT
           </p>
         </div>
         <div>
           <i className='fa fa-phone'></i>
-          <p> (+00) 0000 000 000</p>
+          <p>203-695-2480</p>
         </div>
         <div>
           <i className='fa fa-envelope'></i>
           <p>
-            <a href='/'> office@company.com</a>
+            <a href='/'> Appsactivewear@gmail.com</a>
           </p>
         </div>
       </div>
+
       <div className='footer-right col-md-4 col-sm-6'>
-        <h2>
-          {" "}
-          Company<span> logo</span>
-        </h2>
+        <a href='/'>
+          <img
+            className='footer-logo'
+            src='https://i.postimg.cc/DygJdcXm/APPS.png'
+          ></img>
+        </a>
+        <h4 style={{ color: "white" }}>
+          APPS Screen-Printing
+          {/* <span> logo</span> */}
+        </h4>
         <p className='menu'>
-          <a href='/'> Home</a> |<a href='/'> About</a> |
-          <a href='/'> Services</a> |<a href='/'> Portfolio</a> |
-          <a href='/'> News</a> |<a href='/'> Contact</a>
+          <a href='/'> Home</a> |<a href='/about'> About</a>|
+          <a href='/catalog'> Catalog</a> |<a href='/quote'> Request A Quote</a>
         </p>
-        <p className='name'> Company Name &copy; 2016</p>
+        <p className='name'> APPS Screen-Printing&copy; 2021</p>
       </div>
     </footer>
   );

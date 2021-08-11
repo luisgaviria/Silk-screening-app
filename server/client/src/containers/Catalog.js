@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -47,12 +48,20 @@ const Catalog = (props) => {
   }, [state.category]);
 
   return (
-    <div className=''>
-      <h1>Categories</h1>
-      <ListGroup>
+    <div className='categories-container'>
+      <h1 className='categories-title'>Categories</h1>
+      {/* <ListGroup> */}
+      <DropdownButton
+        className='dropdown-button'
+        id='dropdown-button-dark'
+        title='Dropdown Menu'
+        variant='secondary'
+        menuVariant='dark'
+      >
         {state.categories.map((category) => {
           return (
             <ListGroup.Item
+              className='categories-list-item'
               action
               active={state.category == category ? true : false}
               style={{ cursor: "pointer" }}
@@ -64,7 +73,9 @@ const Catalog = (props) => {
             </ListGroup.Item>
           );
         })}
-      </ListGroup>
+      </DropdownButton>
+      {/* </ListGroup> */}
+
       {state.category.length ? (
         <div className='item-container'>
           {state.items.map((item, index) => {
