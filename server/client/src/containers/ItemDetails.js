@@ -61,9 +61,7 @@ const ItemDetails = (props) => {
           return (
             <>
               <CardGroup>
-                <Card
-                  style={{ width: "18rem", marginTop: "1em", overflow: "auto" }}
-                >
+                <Card style={{ width: "18rem", marginTop: "1em" }}>
                   <Card.Img className='color-image' src={image} />
                   <Card.Title>
                     <h6

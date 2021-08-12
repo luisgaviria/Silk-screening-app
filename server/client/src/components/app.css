@@ -84,9 +84,9 @@
 }
 
 .details-picture:hover {
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 /* .product-details-image:hover {
@@ -132,29 +132,31 @@
 }
 
 .color-image:hover {
-  -webkit-transform: scale(2);
-  -ms-transform: scale(2);
-  transform: scale(2);
+  -webkit-transform: scale(1.65);
+  -ms-transform: scale(1.65);
+  transform: scale(1.65);
 }
 
 .about-us-title {
   /* font-family: "Source Code Pro", monospace; */
   font-family: "Gowun Dodum", sans-serif;
   font-size: 4em;
-  color: rgb(70, 69, 69);
+  color: rgb(61, 60, 60);
   margin: 0 auto;
   margin-top: 1em;
   text-align: center;
+  font-weight: bolder;
 }
 
 .about-us-text {
-  font-size: 1em;
+  font-size: 1.4em;
   max-width: 1200px;
   margin: 0 auto;
-  color: grey;
+  color: rgb(24, 22, 22);
   text-align: left;
   margin-bottom: 10pt;
   margin-top: 10pt;
+  font-weight: 300;
 }
 
 .color-name {
