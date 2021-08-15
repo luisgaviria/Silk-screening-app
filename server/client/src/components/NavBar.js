@@ -6,33 +6,36 @@ import { connect } from "react-redux";
 import { Navbar, Nav } from "react-bootstrap";
 
 const NavBar = (props) => {
-  const renderContent = () => {
-    console.log(props.auth);
-    switch (props.auth) {
-      case null:
-        return;
-      case false:
-        return (
-          <a href='/auth/google' style={{ marginLeft: "26rem" }}>
-            <img src='https://i.postimg.cc/QNYWWTqH/btn-google-signin-dark-normal-web.png'></img>
-          </a>
+  // const renderContent = () => {
+  //   console.log(props.auth);
+  //   switch (props.auth) {
+  //     case null:
+  //       return;
+  //     case false:
+  //       return (
+  //         <a href='/auth/google' style={{ marginLeft: "26rem" }}>
+  //           <img
+  //             alt='sign in button'
+  //             src='https://i.postimg.cc/QNYWWTqH/btn-google-signin-dark-normal-web.png'
+  //           ></img>
+  //         </a>
 
-          // <button
-          //   className='align-items-end'
-          //   style={{ marginLeft: "26rem", marginTop: "-0.8rem" }}
-          // >
-          //   <a href='/auth/google'>Login With Google</a>
-          // </button>
-        );
-      default:
-        return (
-          // <li key='3' style={{ margin: "0 10px" }}>
-          //   Credits: {this.props.auth.credits}
-          // </li>,
-          <a href='/api/logout'>Logout</a>
-        );
-    }
-  };
+  // <button
+  //   className='align-items-end'
+  //   style={{ marginLeft: "26rem", marginTop: "-0.8rem" }}
+  // >
+  //   <a href='/auth/google'>Login With Google</a>
+  // </button>
+  //   );
+  // default:
+  //   return (
+  // <li key='3' style={{ margin: "0 10px" }}>
+  //   Credits: {this.props.auth.credits}
+  // </li>,
+  //         <a href='/api/logout'>Logout</a>
+  //       );
+  //   }
+  // };
 
   return (
     <header>
@@ -46,6 +49,7 @@ const NavBar = (props) => {
         <Navbar.Brand>
           <a href='/' className='navbar-brand'>
             <img
+              alt='company logo'
               className='d-inline-block'
               src='https://i.postimg.cc/DygJdcXm/APPS.png'
             ></img>

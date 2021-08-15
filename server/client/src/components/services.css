@@ -131,13 +131,16 @@ ul {
 }
 
 li {
+  list-style-type: circle;
+
   font-weight: 600;
   padding-bottom: 8px;
   position: relative;
 }
 
 li:before {
-  content: "*";
+  /* content: "*"; */
+  list-style-type: circle;
   position: absolute;
   left: -21px;
   opacity: 0.55;

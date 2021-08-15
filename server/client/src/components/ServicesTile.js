@@ -10,7 +10,7 @@ const ServicesTile = () => {
           <img
             className='shirt'
             src='https://i.postimg.cc/vHRC2tZf/imageedit-1-8001840362.jpgM'
-            alt='image of shirt'
+            alt='T-Shirt icon'
           />
         </div>
         <div className='front'>
@@ -52,7 +52,7 @@ const ServicesTile = () => {
           <img
             className='shirt'
             src='https://i.postimg.cc/vHRC2tZf/imageedit-1-8001840362.jpg'
-            alt='image of shirt'
+            alt='T-Shirt icon'
           />
         </div>
         <div className='front'>
@@ -91,6 +91,7 @@ const ServicesTile = () => {
       <div className='tile-card'>
         <div className='img-wrapper'>
           <img
+            alt='T-shirt'
             className='shirt'
             src='https://i.postimg.cc/vHRC2tZf/imageedit-1-8001840362.jpg'
           />

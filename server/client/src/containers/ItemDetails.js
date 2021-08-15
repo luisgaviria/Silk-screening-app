@@ -35,7 +35,11 @@ const ItemDetails = (props) => {
         <h1>{state.product.title}</h1>
       </div>
       <div className='details-image'>
-        <img className='details-picture' src={state.product.images[1]} />
+        <img
+          alt='product'
+          className='details-picture'
+          src={state.product.images[1]}
+        />
       </div>
       <h6 className='product-description'>{state.product.description}</h6>
       <h6 className='product-description'> {state.product.sizes} </h6>
@@ -56,13 +60,17 @@ const ItemDetails = (props) => {
       })}
 
       {state.product.images.map((image, index) => {
-        if (image.search("https") != -1) {
+        if (image.search("https") !== -1) {
           // console.log(index);
           return (
             <>
               <CardGroup>
                 <Card style={{ width: "18rem", marginTop: "1em" }}>
-                  <Card.Img className='color-image' src={image} />
+                  <Card.Img
+                    alt='product color'
+                    className='color-image'
+                    src={image}
+                  />
                   <Card.Title>
                     <h6
                       className='color-name'

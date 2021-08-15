@@ -51,6 +51,7 @@ const Footer = () => {
       <div className='footer-right col-md-4 col-sm-6'>
         <a href='/'>
           <img
+            alt='logo'
             className='footer-logo'
             src='https://i.postimg.cc/DygJdcXm/APPS.png'
           ></img>

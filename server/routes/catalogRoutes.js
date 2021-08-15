@@ -8,6 +8,14 @@ const paginate = (array, page_size, page_number) => {
   return array.slice((page_number - 1) * page_size, page_number * page_size);
 };
 
+const count_pages = (array, page_size) => {
+  let pages = array.length / page_size;
+  if (pages > parseInt(pages)) {
+    pages = parseInt(pages) + 1;
+  }
+  return pages;
+};
+
 // const filterFromStrangeChars = (title) => {
 //   let temp = title;
 //   // temp = title.replaceAll("&#174;", "");
@@ -33,9 +41,9 @@ module.exports = (app) => {
 
     let products = await Product.find({ category: category });
 
-    products = paginate(products, limit, page);
+    const pages = count_pages(products, limit);
 
-    // const words = {};
+    products = paginate(products, limit, page);
 
     for (let product of products) {
       product.title = product.title.split("&#174;").join();
@@ -45,6 +53,7 @@ module.exports = (app) => {
 
     return res.status(200).json({
       products: products,
+      pages: pages,
       page: page,
       limit: limit,
     });

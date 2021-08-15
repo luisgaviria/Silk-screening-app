@@ -163,3 +163,23 @@
   font-family: "Gowun Dodum", sans-serif;
   font-size: x-large;
 }
+
+.button {
+  border-color: #007bff !important;
+}
+
+.how-to-container {
+  margin-bottom: 6rem;
+}
+
+.how-to-image {
+  background: url("https://i.postimg.cc/SstHZ3k9/order-icon-18.png") no-repeat
+    center center;
+  text-align: center;
+  width: 100%;
+  height: 30vh;
+  margin-bottom: 1rem;
+  background-size: contain;
+
+  display: flex;
+}

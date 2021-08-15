@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 // import Payments from "./Payments";
 import ServicesTile from "./ServicesTile";
+import HowToOder from "./HowToOrder";
 import "./app.css";
 
 const Landing = () => {
@@ -20,6 +21,8 @@ const Landing = () => {
       <div className='not-container'></div>
 
       <ServicesTile />
+
+      <HowToOder />
       {/* <button
         onClick={() => {
           setState({ showPayments: !state.showPayments });
@@ -34,7 +37,7 @@ const Landing = () => {
       ) : null} */}
 
       <Helmet>
-        <title>Silk Printing App</title>
+        <title>Silk Screening and Printing</title>
         <meta name='description' content='Silk Printing App' />
       </Helmet>
     </div>

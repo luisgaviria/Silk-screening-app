@@ -7,7 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Landing from "./Landing";
 import Quote from "./Quote";
-import Dashboard from "./Dashboard";
+// import Dashboard from "./Dashboard";
 import ItemDetails from "../containers/ItemDetails";
 import Catalog from "../containers/Catalog";
 import About from "../components/About";
