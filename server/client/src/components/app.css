@@ -138,7 +138,6 @@
 }
 
 .about-us-title {
-  /* font-family: "Source Code Pro", monospace; */
   font-family: "Gowun Dodum", sans-serif;
   font-size: 4em;
   color: rgb(61, 60, 60);
@@ -146,6 +145,13 @@
   margin-top: 1em;
   text-align: center;
   font-weight: bolder;
+}
+
+@media (max-width: 26.25em) {
+  .about-us-title {
+    font-size: 3em;
+    text-align: center;
+  }
 }
 
 .about-us-text {

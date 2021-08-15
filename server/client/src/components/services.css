@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap");
 
 .wrapper {
-  margin-top: -0.2rem;
-  margin-bottom: 10rem;
+  margin-top: -1rem;
+  margin-bottom: 4rem;
   gap: 2rem;
   display: flex;
   flex-wrap: wrap;
