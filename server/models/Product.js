@@ -10,6 +10,8 @@ const Product = new mongoose.Schema({
   description: mongoose.SchemaTypes.String,
   images: mongoose.SchemaTypes.Array,
   category: mongoose.SchemaTypes.String,
+  MSRP: mongoose.SchemaTypes.Number,
+  suggested_price: mongoose.SchemaTypes.Number,
 });
 
 module.exports = mongoose.model("products", Product);

@@ -43,6 +43,8 @@ const ItemDetails = (props) => {
       </div>
       <h6 className='product-description'>{state.product.description}</h6>
       <h6 className='product-description'> {state.product.sizes} </h6>
+      <h6 className='product-description'> ${state.product.price} </h6>
+
       <div className='d-grid gap-2'>
         <Button variant='primary' size='lg' href='/quote'>
           Request A Quote

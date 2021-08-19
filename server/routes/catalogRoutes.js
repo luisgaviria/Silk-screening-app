@@ -1,7 +1,7 @@
 // const neatCsv = require("neat-csv");
 // const fs = require("fs");
 const { addProductsToDb } = require("../utils/addProducts");
-const { addColors } = require("../utils/addColors");
+const { addPrice } = require("../utils/addPrice");
 const Product = require("../models/Product");
 
 const paginate = (array, page_size, page_number) => {
@@ -101,8 +101,8 @@ module.exports = (app) => {
     // });
   });
 
-  app.get("/api/addcolors/test", async (req, res, next) => {
-    await addColors();
+  app.get("/api/addprices/test", async (req, res, next) => {
+    await addPrice();
   });
 
   app.get("/api/catalog/details/:itemId", async (req, res, next) => {
@@ -122,5 +122,34 @@ module.exports = (app) => {
 
   app.get("/api/scrapToDb", async (req, res, next) => {
     await addProductsToDb();
+  });
+
+  app.get("/api/catalog/search/:keyword", async (req, res, next) => {
+    const keyword = req.params.keyword;
+    const page = req.query.page;
+    const limit = req.query.limit;
+    let products = await Product.find({
+      $or: [
+        { category: { $regex: keyword, $options: "i" } },
+        { title: { $regex: keyword, $options: "i" } },
+      ],
+    });
+
+    const pages = count_pages(products, limit);
+
+    products = paginate(products, limit, page);
+
+    for (let product of products) {
+      product.title = product.title.split("&#174;").join();
+      product.title = product.title.split("&#153;").join();
+      product.title = product.title.replace(/,/g, "");
+    }
+
+    return res.status(200).json({
+      products: products,
+      pages: pages,
+      page: page,
+      limit: limit,
+    });
   });
 };
