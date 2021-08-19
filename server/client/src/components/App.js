@@ -1,18 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-
-import Header from "./Header";
-import Footer from "./Footer";
-import Landing from "./Landing";
-import Quote from "./Quote";
-// import Dashboard from "./Dashboard";
-import ItemDetails from "../containers/ItemDetails";
-import Catalog from "../containers/Catalog";
-import About from "../components/About";
-
 import "./app.css";
+
+const Header = lazy(() => import("./Header"));
+const Footer = lazy(() => import("./Footer"));
+const Landing = lazy(() => import("./Landing"));
+const Quote = lazy(() => import("./Quote"));
+const ItemDetails = lazy(() => import("../containers/ItemDetails"));
+const Catalog = lazy(() => import("../containers/Catalog"));
+const About = lazy(() => import("../components/About"));
 
 class App extends Component {
   componentDidMount() {
@@ -22,22 +20,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
-          <div>
-            <Header />
+        <Suspense fallback={<h1>Still Loading…</h1>}>
+          <BrowserRouter>
+            <div>
+              <Header />
 
-            <Route exact path='/' component={Landing} />
-            <Route exact path='/about' component={About} />
-            <Route
-              exact
-              path='/catalog/details/:itemId'
-              component={ItemDetails}
-            />
-            <Route exact path='/quote' component={Quote} />
-            <Route exact path='/catalog' component={Catalog} />
-            <Footer />
-          </div>
-        </BrowserRouter>
+              <Route exact path='/' component={Landing} />
+              <Route exact path='/about' component={About} />
+              <Route
+                exact
+                path='/catalog/details/:itemId'
+                component={ItemDetails}
+              />
+              <Route exact path='/quote' component={Quote} />
+              <Route exact path='/catalog' component={Catalog} />
+              <Footer />
+            </div>
+          </BrowserRouter>
+        </Suspense>
       </div>
     );
   }
