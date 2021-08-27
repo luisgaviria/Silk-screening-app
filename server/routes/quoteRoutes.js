@@ -9,7 +9,7 @@ module.exports = (app) => {
     const file_buffer = file.data.toString("base64");
     const msg = {
       to: "luis.aptx@gmail.com",
-      from: "luis.aptx@gmail.com",
+      from: body.email,
       subject: body.title,
       text: `Message: ${body.message} \n\n Name: ${body.name} \n Email: ${body.email} \n Phone Number: ${body.phone_number}`,
       attachments: [

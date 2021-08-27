@@ -93,9 +93,9 @@ const Quote = () => {
             style={{ marginBottom: "2rem" }}
             type='text'
             placeholder='Contact'
-            name='contact'
+            name='name'
             onChange={handleInputChange}
-            value={state.contact}
+            value={state.name}
           />
         </Form.Group>
         <Form.Group>

@@ -28,7 +28,7 @@ const ItemDetails = (props) => {
       <Helmet>
         <title>{state.product.title}</title>
         <meta name='description' content={state.product.description} />
-        <link rel='canonical' href='http://localhost:3001.com/' />
+        {/* <link rel='canonical' href='http://localhost:3001.com/' /> */}
       </Helmet>
 
       <div className='product-description'>
