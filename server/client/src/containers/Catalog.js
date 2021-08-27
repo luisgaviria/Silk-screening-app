@@ -299,7 +299,7 @@ const Catalog = (props) => {
               })}
             </div>
           ) : (
-            <h1>No items found</h1>
+            <br></br>
           )}
           {/* {state.page == 1 ? (
           <button onClick={goToNextPage}>{">>"}</button>
