@@ -11,9 +11,9 @@ import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions/index";
 import axios from "axios";
- 
+
 // import Card from "react-bootstrap/Card";
- 
+
 const Catalog = (props) => {
   const history = useHistory();
   const [state, setState] = useState({
@@ -28,13 +28,13 @@ const Catalog = (props) => {
     search: "",
   });
   // const [isShown, setIsShown] = useState(false);
- 
+
   // const onToggleHandler = (isOpen, e, metadata) => {
   //   if (metadata.source !== "select") {
   //     setIsShown(isOpen);
   //   }
   // };
- 
+
   const handleInputFromSearchBar = (event) => {
     setState((prevState) => {
       return {
@@ -43,7 +43,7 @@ const Catalog = (props) => {
       };
     });
   };
- 
+
   const clickOnSearchButton = async () => {
     setState((prevState) => {
       return {
@@ -59,9 +59,9 @@ const Catalog = (props) => {
         },
       }
     );
- 
+
     console.log(data.products);
- 
+
     setState((prevState) => {
       return {
         ...prevState,
@@ -74,11 +74,11 @@ const Catalog = (props) => {
       };
     });
   };
- 
+
   const clickOnProduct = (itemId) => {
     history.push(`/catalog/details/${itemId}`);
   };
- 
+
   const onClickPage = (page) => {
     setState({
       ...state,
@@ -87,7 +87,7 @@ const Catalog = (props) => {
       page: page,
     });
   };
- 
+
   const ReturnPages = () => {
     const array = [];
     for (let i = 1; i <= state.pages; i++) {
@@ -108,7 +108,7 @@ const Catalog = (props) => {
     }
     return array;
   };
- 
+
   // const goToNextPage = () => {
   //   let page = state.page;
   //   page++;
@@ -119,7 +119,7 @@ const Catalog = (props) => {
   //     page: page,
   //   });
   // };
- 
+
   // const goToPreviousPage = () => {
   //   let page = state.page;
   //   page--;
@@ -130,7 +130,7 @@ const Catalog = (props) => {
   //     page: page,
   //   });
   // };
- 
+
   useEffect(async () => {
     const { data } = await axios.get("/api/catalog/categories", {
       headers: {
@@ -143,7 +143,7 @@ const Catalog = (props) => {
       categories: data.categories,
     });
   }, []);
- 
+
   useEffect(async () => {
     if (!state.searchEnabled) {
       const { data } = await axios.get(
@@ -189,28 +189,28 @@ const Catalog = (props) => {
       }
     }
   }, [state.category, state.page]);
- 
+
   if (state.loading) {
     return (
-      <div className="categories-container">
-        <h1 className="categories-title">Categories</h1>
+      <div className='categories-container'>
+        <h1 className='categories-title'>Categories</h1>
         <Spinner
           style={{ width: "10rem", height: "10rem" }}
-          animation="border"
-          variant="primary"
+          animation='border'
+          variant='primary'
         />
         <DropdownButton
-          className="dropdown-button"
-          id="dropdown-button-dark"
-          title="Dropdown Menu"
-          variant="secondary"
-          menuVariant="dark"
+          className='dropdown-button'
+          id='dropdown-button-dark'
+          title='Dropdown Menu'
+          variant='secondary'
+          menuVariant='dark'
           // onSelect={() => document.click()}
         >
           {state.categories.map((category) => {
             return (
               <ListGroup.Item
-                className="categories-list-item"
+                className='categories-list-item'
                 action
                 active={state.category === category ? true : false}
                 style={{ cursor: "pointer" }}
@@ -234,7 +234,7 @@ const Catalog = (props) => {
   } else {
     return (
       <>
-        <Form style={{ width: "300px", marginLeft: "1200px", display: "flex" }}>
+        {/* <Form style={{ width: "300px", marginLeft: "1200px", display: "flex" }}>
           <Form.Control
             value={state.search}
             onChange={handleInputFromSearchBar}
@@ -242,23 +242,23 @@ const Catalog = (props) => {
             placeholder="Search Products"
           />
           <Button onClick={clickOnSearchButton}>Search</Button>
-        </Form>
-        <div className="categories-container">
-          <h1 className="categories-title">Categories</h1>
- 
+        </Form> */}
+        <div className='categories-container'>
+          <h1 className='categories-title'>Categories</h1>
+
           {/* <ListGroup> */}
           <DropdownButton
-            className="dropdown-button"
-            id="dropdown-button-dark"
-            title="Dropdown Menu"
-            variant="secondary"
-            menuVariant="dark"
-            data-toggle="dropdown"
+            className='dropdown-button'
+            id='dropdown-button-dark'
+            title='Dropdown Menu'
+            variant='secondary'
+            menuVariant='dark'
+            data-toggle='dropdown'
           >
             {state.categories.map((category) => {
               return (
                 <ListGroup.Item
-                  className="categories-list-item"
+                  className='categories-list-item'
                   action
                   active={state.category === category ? true : false}
                   style={{ cursor: "pointer" }}
@@ -277,22 +277,22 @@ const Catalog = (props) => {
             })}
           </DropdownButton>
           {/* </ListGroup> */}
- 
+
           {state.category.length || state.items.length ? (
-            <div className="item-container">
+            <div className='item-container'>
               {state.items.map((item, index) => {
                 return (
                   <div
                     onClick={() => clickOnProduct(item._id)}
-                    className="not-item-container"
+                    className='not-item-container'
                     // style={{ cursor: "pointer" }}
                   >
                     <img
-                      className="product-image"
+                      className='product-image'
                       src={item.images[1]}
-                      alt="product-image"
+                      alt='product-image'
                     />
-                    <h6 className="product-title">{item.title}</h6>
+                    <h6 className='product-title'>{item.title}</h6>
                     {/* <h6>{item.sizes}</h6> */}
                   </div>
                 );
@@ -322,17 +322,17 @@ const Catalog = (props) => {
     );
   }
 };
- 
+
 const mapStateToProps = (state) => {
   return {
     category: state.category,
   };
 };
- 
+
 const mapDispatchToProps = (dispatch) => {
   return {
     updateCategory: (category) => dispatch(actions.updateCategory(category)),
   };
 };
- 
+
 export default connect(mapStateToProps, mapDispatchToProps)(Catalog);
