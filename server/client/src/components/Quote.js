@@ -70,12 +70,18 @@ const Quote = () => {
       <h1 style={{ margin: "auto", maxWidth: "600px", marginBottom: "2rem" }}>
         Request a Quote
       </h1>
+      <h3 style={{ marginBottom: "1rem", margin: "auto", maxWidth: "600px" }}>
+        All fields are required.
+      </h3>
+      <h3 style={{ marginBottom: "4rem", margin: "auto", maxWidth: "600px" }}>
+        Please enter an image as well.
+      </h3>
       <Form
         style={{
           maxWidth: "600px",
           margin: "auto",
           marginBottom: "50px",
-          marginTop: "-1rem",
+          marginTop: "1rem",
         }}
       >
         <Form.Group>
