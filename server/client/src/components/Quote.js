@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 
 const Quote = () => {
@@ -13,14 +15,33 @@ const Quote = () => {
     contact: "",
     image: null,
     sent: false,
+    company_name_set: false,
+    phone_set: false,
   });
 
   const handleInputChange = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
+    if (event.target.name == "company_name") {
+      setState({
+        ...state,
+        company_name_set: true,
+        phone_set: true,
+        [event.target.name]: event.target.value,
+      });
+    } else {
+      setState({
+        ...state,
+        [event.target.name]: event.target.value,
+      });
+    }
   };
+
+  // if (event.target.name == "phone_number") {
+  //   setState({
+  //     ...state,
+  //     phone_set: true,
+  //     [event.target.name]: event.target.value,
+  //   });
+  // }
 
   const handleUploadImage = (event) => {
     setState({
@@ -31,6 +52,22 @@ const Quote = () => {
 
   const handleButtonClick = async () => {
     const form_data = new FormData();
+
+    if (!state.company_name.length) {
+      setState({
+        ...state,
+        company_name_set: true,
+      });
+      return;
+    }
+
+    if (!state.phone_number.length) {
+      setState({
+        ...state,
+        phone_set: true,
+      });
+      return;
+    }
 
     console.log(state);
     form_data.append("image", state.image);
@@ -70,12 +107,12 @@ const Quote = () => {
       <h1 style={{ margin: "auto", maxWidth: "600px", marginBottom: "2rem" }}>
         Request a Quote
       </h1>
-      <h3 style={{ marginBottom: "1rem", margin: "auto", maxWidth: "600px" }}>
+      {/* <h3 style={{ marginBottom: "1rem", margin: "auto", maxWidth: "600px" }}>
         All fields are required.
       </h3>
       <h3 style={{ marginBottom: "4rem", margin: "auto", maxWidth: "600px" }}>
         Please enter an image as well.
-      </h3>
+      </h3> */}
       <Form
         style={{
           maxWidth: "600px",
@@ -86,13 +123,17 @@ const Quote = () => {
       >
         <Form.Group>
           <Form.Control
-            style={{ marginBottom: "2rem" }}
+            style={{ marginBottom: "10px" }}
             type='text'
-            placeholder='Company Name'
+            placeholder='Subject or Company Name'
             name='company_name'
             onChange={handleInputChange}
             value={state.company_name}
+            isInvalid={state.company_name_set && !state.company_name.length}
           />
+          <Form.Control.Feedback type='invalid'>
+            Please enter a title.
+          </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
           <Form.Control
@@ -145,11 +186,15 @@ const Quote = () => {
             name='phone_number'
             value={state.phone_number}
             onChange={handleInputChange}
+            isInvalid={state.phone_set && !state.phone_number.length}
           />
+          <Form.Control.Feedback type='invalid'>
+            Please enter a phone number.
+          </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
           <p style={{ marginBottom: "5px", fontWeight: "400" }}>
-            Add image below{" "}
+            Add image below
           </p>
           <Form.Control
             style={{ marginBottom: "2rem" }}
@@ -162,7 +207,17 @@ const Quote = () => {
         <Button onClick={handleButtonClick}>Submit</Button>
       </Form>
       {state.sent ? (
-        <p style={{ color: "green" }}>Succesfully sent email</p>
+        <Container>
+          <Alert variant='success'>
+            <Alert.Heading>Hey, thanks for contacting us!</Alert.Heading>
+            <p>
+              Aww yeah, you successfully read this important alert message. This
+              means you have successfully sent a inquiry to us!
+            </p>
+            <hr />
+            <p className='mb-0'>Someone will contact you shortly!</p>
+          </Alert>
+        </Container>
       ) : null}
     </>
   );
