@@ -8,7 +8,7 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm install client && npm run build --openssl-legacy-provider client"
+    "build": "npm install --prefix client && npm run build --openssl-legacy-provider --prefix client"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "@emotion/core": "^11.0.0",
     "@sendgrid/mail": "^7.4.5",
     "body-parser": "^1.19.0",
+    "client": "^0.0.1",
     "concurrently": "^6.2.0",
     "cookie-session": "^1.4.0",
     "csv-parser": "^3.0.0",
