@@ -11,6 +11,9 @@
     "build": "npm install --force --prefix client && npm run build --openssl-legacy-provider --prefix client"
   },
   "author": "",
+  "engines": {
+    "node": "16.x"
+  },
   "license": "ISC",
   "dependencies": {
     "@emotion/core": "^11.0.0",
