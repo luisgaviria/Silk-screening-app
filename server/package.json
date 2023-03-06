@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
+    "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "export NODE_ENV=production npm install --prefix client && npm run build --openssl-legacy-provider --prefix client"
+    "build": "npm install --prefix client && npm run build --openssl-legacy-provider --prefix client"
   },
   "author": "",
   "license": "ISC",
